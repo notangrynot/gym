@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>签到成功</title>
+  <style>
+    body,html{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction:column ;
+      height: 100%;
+    }
+    .image {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <img src="./img2/1_aac.jpg" class="image" >
+  <img id="imageDisplay" class="image" >
+</div>
+
+<script>
+  function getCurrentTimeSlot() {
+    const now = new Date();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+
+    if (hour < 14) {
+      return "1";
+    } else if (hour >= 14 && hour < 16) {
+      return "1";
+    }else if (hour === 16 && minute < 15) {
+      return "2";
+    } else if (hour === 16 && minute >= 15 || (hour === 17 && minute < 45)) {
+      return "2";
+    } else if (hour === 17 && minute >= 45|| hour>=18) {
+      return "3";
+    } else {
+      return "3";
+    }
+  }
+
+  function loadImage() {
+    const currentTimeSlot = getCurrentTimeSlot();
+    const now = new Date();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const imageSrc = `./img2/${month}${day}_${currentTimeSlot}.jpg`; // 图片的路径
+
+    document.getElementById("imageDisplay").src = imageSrc;
+  }
+
+  loadImage();
+</script>
+</body>
+</html>
