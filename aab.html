@@ -25,15 +25,14 @@
 <div>
   <div class="container">
       <img id="imageDisplay" class="image">
-      <button style="display: none;" id="hiddenButton">隐藏按钮</button>
   </div>
 
 </div>
 
 <script>
-  document.getElementById("hiddenButton").onclick = function() {
-  window.location.href = "./aac.html";
-};
+  document.addEventListener('click', function() {
+      window.location.href = "./aac.html";
+    });
 </script>
 <script>
   function getCurrentTimeSlot() {
