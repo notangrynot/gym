@@ -24,7 +24,7 @@
 <body>
 <div class="container">
   <img src="./img2/1_aac.jpg" class="image" >
-  <img id="imageDisplay" class="image" >
+  <img id="imageDisplay1" class="image" >
 </div>
 
 <script>
@@ -55,7 +55,7 @@
     const day = String(now.getDate()).padStart(2, '0');
     const imageSrc = `./img2/${month}${day}_${currentTimeSlot}.jpg`; // 图片的路径
 
-    document.getElementById("imageDisplay").src = imageSrc;
+    document.getElementById("imageDisplay1").src = imageSrc;
   }
 
   loadImage();
