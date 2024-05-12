@@ -24,14 +24,16 @@
 <body>
 <div>
   <div class="container">
-    <a href="./aac.html">
       <img id="imageDisplay" class="image">
-    </a>
+      <button style="display: none;bottom:450px;right:1000px" id="hiddenButton">隐藏按钮</button>
   </div>
 
 </div>
 
 <script>
+  document.getElementById("hiddenButton").onclick = function() {
+  window.location.href = "另一个页面的链接";
+};
   function getCurrentTimeSlot() {
     const now = new Date();
     const hour = now.getHours();
